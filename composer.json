@@ -7,6 +7,9 @@
             "email": "piotr.scibor@pragmago.tech"
         }
     ],
+    "require": {
+        "php": ">=8.2.20"
+    },
     "autoload": {
         "psr-4": {
             "PragmaGoTech\\Interview\\": "src/"
