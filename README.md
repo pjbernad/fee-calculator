@@ -39,12 +39,17 @@ composer install
 ```php
 <?php
 
+use PragmaGoTech\Interview\Interpolation\LinearInterpolation;
 use PragmaGoTech\Interview\Model\LoanProposal;
+use PragmaGoTech\Interview\Repository\FeeConstRepository;
+use PragmaGoTech\Interview\Service\FeeCalculator;
 
-$calculator = new FeeCalculator();
+$feeRepository = new FeeConstRepository();
+$linearInterpolation = new LinearInterpolation();
+$calculator = new FeeCalculator($feeRepository, $linearInterpolation);
 
-$application = new LoanProposal(24, 2750);
-$fee = $calculator->calculate($application);
+$loanProposal = new LoanProposal(24, 2750);
+$fee = $calculator->calculate($loanProposal);
 // $fee = (float) 115.0
 ```
 
